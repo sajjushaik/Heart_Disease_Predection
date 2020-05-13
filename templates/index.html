@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Disease Predection</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+<br>
+<br><br>
+<br><br>
+<br><br>
+<br>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="age" required="required" />
+        <input type="text" name="gender" placeholder="1-Male , 0-Female" required="required" />
+        <input type="text" name="cp" placeholder="chest pain 0-3" required="required" />
+        <input type="text" name="bp" placeholder=" blood pressure in mm " required="required" />
+        <input type="text" name="col" placeholder=" serum cholestoral in mg/dl " required="required" />
+        <input type="text" name="bs" placeholder=" fasting blood sugar > 120 = 1,<120=0 " required="required" />
+<input type="text" name="rs" placeholder=" resting electrocardiographic results 0 or 1 " required="required" />
+<input type="text" name="mhr" placeholder="maximum heart rate achieved" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
